@@ -1,0 +1,110 @@
+2CS 112 -- Spring 2013
+
+HW02 Grading Report
+
+--------------------------------------------------------------------------------
+% INSTRUCTIONS FOR GRADER (will be removed before uploading to the student directory)
+% 
+% See www.cs.bu.edu/fac/snyder/cs112/  for hw assignment, solution, and Java Coding 
+% Styles and Conventions. 
+% 
+% Total Points: 100
+% 
+% Due Date/Time:  Tuesday 2/5  @  12 midnight
+% 
+% Late policy: May hand in up to 24 hours late for 10% off the total points (e.g., in this 
+% case -10 pts); time of submission is time of last file submitted. 
+% 
+% Grading instructions: Lines which start with a negative number will be totalled up by the 
+% script which calculates the total score; simply delete any lines which DO NOT apply, leaving
+% those which should count against the score. Don't worry if the deductions total more than
+% the worth of the problem, as we will take the point value of the problem as an upper bound
+% on the number of deductions.  I have put warnings in as deductions with point value -0, usually
+% where a similar deduction is given in an earlier problem or a warning that in future assignments
+% this will be an actual deduction. Feel free to add your own warnings or comments; 
+% but put them in lines beginning with "//"; you may insert such comments anywhere by
+% following this convention (which is just to ensure that no comment accidentally looks 
+% like a deduction by starting with a negative number). 
+% 
+% General Comments: This assignment did not involve that much actual coding, except for the resizing
+% method. They had to fool around with getting generics to work, and create useful test cases, but
+% otherwise there was not much actual algorithm development. Again, I expect them to write neat,
+% well-organized code which is readable by humans. 
+%
+% I have provided a grading client which tests the code here:
+%
+%    www.cs.bu.edu/fac/snyder/cs112/Grading/HW02GradingClient.java
+%
+% You can simply run it and check out how many test cases do not work. 
+% --------------------------------------------------------------------------------
+
+% If the assignment was not submitted, delete all but the next line 
+  -100 Missing submission
+  -10   Assignment was submitted late
+
+
+Problem One (100 pts)
+
+% Following can be determined without running HW02GradingClient:
+-50  ResizingQueue.java does not compile
+-10  Queue is not generic
+-10  Did not write an expansion method
+-10 Did not write a contraction method
+-10 Did not use circular buffer
+-3   Did not start with initial size of 8
+-3   Header comment is unchanged from original or missing
+-3   Unit test is unchanged from original file. 
+-2   One or more "helper methods" (not in the interface) are not made private (i.e., are public or default)
+-2   Code is poorly organized, messy, and/or hard to read
+-2   Did not provide comments before each method
+-0   Total lack of comments in midst or end of lines describing notable issues necessary to understand the code
+-0   Left in too many debugging statements (even if they are commented out) so code is hard to read
+% No test on this, just eyeball the code
+-0  Dequeue should return null if applied to empty list
+% Following are based on running the unit test in their class
+% They should have tested Queue<Integer> on the following: 
+%      isEmpty on an empty queue
+%                    non-empty queue
+%                    after a resizing operation
+%                    when it is empty after several operations
+%      size on an empty queue
+%                 non-empty queue
+%           after a resizing operation
+%           when it is empty after several operations
+%      enqueue by itself (insert a bunch of items)
+%      dequeue by itself (remove a bunch of items)
+%      enqueue and then dequeue and repeat a few times
+% They needed to check that resizing worked by checking on at least two expansions and
+%                                                                   two constractions back to original size of 8
+% Then they should have tested Queue<String> on something and 
+%                              Queue<Point> on something
+%
+%  Run the unit test and get a quick sense for how many of these they did and that worked correctly
+%  (you have to decide if they missed (i) none, (ii) 1-4 tests, (iii) more than 5. Don't be OCD about it....
+%  If they did not provide something that demonstrated that constraction or expansion worked, assume
+%  it did not work. Expansion can be demonstrated by a queue that reaches a size larger than 16, but
+%  constraction can not be verified unless they print out the array or at least the length of the array
+%  
+-10 Did not write unit test
+-5  Array expansion did not work
+-5  Array contraction did not work
+-2  Did not contract back to size 8, but kept contracting below size 8
+-5   Omitted more than 5 test requied by assignment
+-2   Omitted 1-4 tests required by assignment
+% Following are based on output from grading client
+% If it crashes on something, count those as errors, and don't take any additional deduction
+-10   Five or more errors when run on grading client
+-8    Four errors when run on grading client
+-6    Three errors when run on grading client
+-4    Two errors when run on grading client
+-2    One error when run on grading client
+
+% Put any additional comments or warnings here, start line with //
+% For example, you might comment on how readable their code is, or perhaps they have
+% used a  really dumb method for resizing, or they use dumb idioms such as 
+%       if(isEmpt()y == false)       instead of     if( !isEmpty() )  
+%  or they have used dumb variable names
+ 
+
+% Leave it blank. 
+Total for this: 
